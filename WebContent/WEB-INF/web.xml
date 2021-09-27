@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>PubHub</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>PublishBookServlet</servlet-name>
+    <servlet-class>examples.pubhub.servlets.PublishBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublishBookServlet</servlet-name>
+    <url-pattern>/PublishBook</url-pattern>
+  </servlet-mapping> 
+ 
+  <servlet>
+    <servlet-name>AddTagServlet</servlet-name>
+    <servlet-class>examples.pubhub.servlets.AddTagServlet</servlet-class>
+  </servlet>
+<servlet-mapping>
+    <servlet-name>AddTagServlet</servlet-name>
+    <url-pattern>/addTag</url-pattern>
+  </servlet-mapping>   
+
+   <servlet>
+    <servlet-name>RemoveTagServlet</servlet-name>
+    <servlet-class>examples.pubhub.servlets.RemoveTagServlet</servlet-class>
+  </servlet>
+<servlet-mapping>
+    <servlet-name>RemoveTagServlet</servlet-name>
+    <url-pattern>/removeTag</url-pattern>
+  </servlet-mapping> 
+
+     <servlet>
+    <servlet-name>getBooksByGivenTagServlet</servlet-name>
+    <servlet-class>examples.pubhub.servlets.GetBooksByGivenTagServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getBooksByGivenTagServlet</servlet-name>
+    <url-pattern>/getBooksByGivenTag</url-pattern>
+  </servlet-mapping> 
+  
+  
+   <servlet>
+    <servlet-name>RetrieveBookTagsServlet</servlet-name>
+    <servlet-class>examples.pubhub.servlets.RetrieveBookTagsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RetrieveBookTagsServlet</servlet-name>
+    <url-pattern>/retrieveBookTags</url-pattern>
+  </servlet-mapping> 
+  
+   
+  <error-page> 
+    <error-code>404</error-code>
+    <location>/notFoundError.jsp</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/error.jsp</location>
+  </error-page>
+</web-app>
